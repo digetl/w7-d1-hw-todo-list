@@ -11,10 +11,22 @@
 </head>
 <body>
   <div id="app">
+    
     <h1>My Todo List</h1>
-    <ul>
 
+    <ul>
+      <li v-for="(todo, index) in todos" :class="todo.isPriority ? 'priority':'not-priority'" >
+        <span>{{todo.name}}</span>
+        <span v-if="todo.isPriority"> Priority!</span>
+        <button v-if="!todo.isPriority" v-on:click="makePriority(index)">Make Priority</button>
+      </li>
     </ul>
+
+    <form v-on:submit.prevent="saveNewTodo">
+      <label for="new-todo">Add a new todo:</label>
+      <input id="new-todo" type="text" v-model="newTodo" />
+      <input type="submit" value ="Save New Todo" />
+    </form>
     
   </div>
 </body>

@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         {name: "Read Ethan a nighttime story", isPriority: true},
         {name: "Make a cup of tea", isPriority: false}
         ],
-        newTodo:""
+        newTodo: ""
     },
     methods: {
         saveNewTodo: function(){
-            this.todo.push({
+            this.todos.push({
                 name: this.newTodo,
                 isPriority: false
             });
