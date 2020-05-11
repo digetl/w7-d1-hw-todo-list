@@ -11,13 +11,13 @@
 </head>
 <body>
   <div id="app">
-    
+
     <h1>My Todo List</h1>
 
     <ul>
       <li v-for="(todo, index) in todos" :class="todo.isPriority ? 'priority':'not-priority'" >
         <span>{{todo.name}}</span>
-        <span v-if="todo.isPriority"> Priority!</span>
+        <span v-if="todo.isPriority">     <strong>Priority!</strong></span>
         <button v-if="!todo.isPriority" v-on:click="makePriority(index)">Make Priority</button>
       </li>
     </ul>
